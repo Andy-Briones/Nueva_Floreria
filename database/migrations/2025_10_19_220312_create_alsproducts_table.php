@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('description');
             $table->decimal('price', 10, 2); 
             $table->integer('stock');
-            $table->foreignId('product_category_id')->constrained('alsproduct_categories')->onDelete('cascade');
-            $table->foreign('supllier_id')->constrained('alssuppliers')->onDelete('cascade');
+            $table->foreignId('alsproduct_category_id')->constrained('alsproduct_categories')->onDelete('cascade');
+            $table->foreignId('alssupllier_id')->constrained('alssuplliers')->onDelete('cascade');
             $table->timestamps();
         });
     }

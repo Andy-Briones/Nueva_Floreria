@@ -36,7 +36,7 @@ class categoryController extends Controller
     {
         $category = request()->except(['_token', '_method']);
         alsproduct_category::where('id', '=', $id)->update($category);
-        return redirect()->route('alsproduct_categories.index');
+        return redirect()->route('productsGeneral.productCategorys.index');
     }
     public function destroy($id)
     {

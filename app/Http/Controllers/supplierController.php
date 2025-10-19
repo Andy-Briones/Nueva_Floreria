@@ -11,11 +11,11 @@ class supplierController extends Controller
     public function index()
     {
         $supplier['alssuplliers'] = alssupllier::paginate(5);
-        return view('suppliers.index', $supplier);
+        return view('supplier.index', $supplier);
     }
     public function create()
     {
-        return view('suppliers.create');
+        return view('supplier.create');
     }
     public function store(Request $request)
     {
@@ -30,13 +30,13 @@ class supplierController extends Controller
     public function edit($id)
     {
         $supplier = alssupllier::findOrFail($id);
-        return view('suppliers.edit', compact('supplier'));
+        return view('supplier.edit', compact('supplier'));
     }
     public function update(Request $request, $id)
     {
         $supplier = request()->except(['_token', '_method']);
         alssupllier::where('id', '=', $id)->update($supplier);
-        return redirect()->route('people.suppliers.index');
+        return redirect()->route('supplier.index');
     }
     public function destroy($id)
     {

@@ -69,7 +69,7 @@ class productController extends Controller
     public function update(Request $request, $id)
     {
         $product = request()->except(['_token', '_method']);
-        Product::where('id', '=', $id)->update($product);
+        alsproduct::where('id', '=', $id)->update($product);
         return redirect()->route('productsGeneral.products.index');
     }
     public function destroy($id)
